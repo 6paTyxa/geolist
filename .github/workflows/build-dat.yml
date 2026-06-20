@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'claude-ai/claude-ai.txt'
-      - 'build/gen_geosite.py'
+      - '.github/gen_geosite.py'
       - '.github/workflows/build-dat.yml'
   workflow_dispatch:
 
@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build geosite.dat
-        run: python build/gen_geosite.py claude-ai/claude-ai.txt claude-ai/claude-ai.dat CLAUDE
+        run: python .github/gen_geosite.py claude-ai/claude-ai.txt claude-ai/claude-ai.dat CLAUDE
 
       - name: Commit dat
         run: |
