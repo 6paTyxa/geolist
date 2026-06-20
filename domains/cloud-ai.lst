@@ -1,0 +1,97 @@
+# === ANTHROPIC CORE ===
+anthropic.com
+www.anthropic.com
+claude.ai
+www.claude.ai
+claude.com
+www.claude.com
+
+# === API ===
+api.anthropic.com
+a-api.anthropic.com
+api-prod.anthropic.com
+production-api.anthropic.com
+api.console.anthropic.com
+
+# === CDN / ASSETS ===
+a-cdn.anthropic.com
+s-cdn.anthropic.com
+cdn.anthropic.com
+assets.anthropic.com
+assets-proxy.anthropic.com
+assets.claude.ai
+files.anthropic.com
+images.anthropic.com
+downloads.claude.ai
+
+# === CONSOLE / PLATFORM ===
+console.anthropic.com
+platform.anthropic.com
+platform.claude.com
+code.claude.com
+
+# === DOCS / SUPPORT / INFO ===
+docs.anthropic.com
+docs.claude.com
+support.anthropic.com
+support.claude.com
+resources.anthropic.com
+privacy.anthropic.com
+trust.anthropic.com
+billing.anthropic.com
+status.anthropic.com
+status.claude.com
+legal.anthropic.com
+red.anthropic.com
+alignment.anthropic.com
+institute.anthropic.com
+
+# === PARTNER NETWORK ===
+partnerhub.anthropic.com
+
+# === AUTH ===
+auth.anthropic.com
+accounts.anthropic.com
+
+# === TELEMETRY / ANALYTICS ===
+telemetry.anthropic.com
+metrics.anthropic.com
+analytics.anthropic.com
+statsig.anthropic.com
+statsig.com
+
+# === CLAUDE CODE / DEV ===
+claude.dev
+api.claude.dev
+app.claude.dev
+mcp.claude.dev
+registry.claude.dev
+download.claude.dev
+releases.claude.dev
+update.claude.dev
+
+# === MCP / USER CONTENT ===
+claudeusercontent.com
+bridge.claudeusercontent.com
+claudemcpcontent.com
+
+# === МОНИТОРИНГ / ОШИБКИ ===
+sentry.io
+datadoghq.com
+
+# === ПОДДЕРЖКА (Intercom) ===
+intercom.io
+api-iam.intercom.io
+nexus-websocket-a.intercom.io
+widget.intercom.io
+intercomcdn.com
+
+# === АНАЛИТИКА (Google) ===
+googletagmanager.com
+gstatic.com
+
+# === ПРОЧЕЕ ===
+fbcdn.net
+hexagon-cdn.com
+cloudflare.com
+cloudfront.net
