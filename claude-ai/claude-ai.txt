@@ -1,10 +1,12 @@
+# Claude AI geosite — домены Anthropic / Claude
+# Категория geosite: claude  (использовать как geosite:claude)
+# Формат: домен на строку. По умолчанию = domain: (покрывает поддомены).
+# Обновлено: 2026-06-20
+
 # === ANTHROPIC CORE ===
 anthropic.com
-www.anthropic.com
 claude.ai
-www.claude.ai
 claude.com
-www.claude.com
 
 # === API ===
 api.anthropic.com

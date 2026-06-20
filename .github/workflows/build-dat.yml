@@ -1,0 +1,47 @@
+name: Build geosite.dat
+
+on:
+  push:
+    paths:
+      - 'claude-ai/claude-ai.txt'
+      - '.github/workflows/build-dat.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Build geosite.dat from claude-ai.txt
+        run: |
+          set -e
+          # генератор v2fly
+          git clone --depth 1 https://github.com/v2fly/domain-list-community.git dlc
+          mkdir -p dlc/data
+          # исходник категории = имя файла -> тег geosite:claude
+          grep -vE '^\s*#' claude-ai/claude-ai.txt | sed '/^\s*$/d' > dlc/data/claude
+          cd dlc
+          go run ./ --datapath=./data --outputname=geosite.dat --exportlists=claude
+          cp publish/geosite.dat ../claude-ai/claude-ai.dat
+
+      - name: Commit dat
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add claude-ai/claude-ai.dat
+          if git diff --staged --quiet; then
+            echo "Нет изменений в .dat"
+          else
+            git commit -m "build: пересборка claude-ai.dat"
+            git push
+          fi
