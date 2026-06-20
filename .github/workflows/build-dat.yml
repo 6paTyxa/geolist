@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'claude-ai/claude-ai.txt'
+      - 'build/gen_geosite.py'
       - '.github/workflows/build-dat.yml'
   workflow_dispatch:
 
@@ -17,22 +18,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: '1.22'
-
-      - name: Build geosite.dat from claude-ai.txt
-        run: |
-          set -e
-          # генератор v2fly
-          git clone --depth 1 https://github.com/v2fly/domain-list-community.git dlc
-          mkdir -p dlc/data
-          # исходник категории = имя файла -> тег geosite:claude
-          grep -vE '^\s*#' claude-ai/claude-ai.txt | sed '/^\s*$/d' > dlc/data/claude
-          cd dlc
-          go run ./ --datapath=./data --outputname=geosite.dat --exportlists=claude
-          cp publish/geosite.dat ../claude-ai/claude-ai.dat
+      - name: Build geosite.dat
+        run: python build/gen_geosite.py claude-ai/claude-ai.txt claude-ai/claude-ai.dat CLAUDE
 
       - name: Commit dat
         run: |
